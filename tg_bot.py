@@ -44,8 +44,8 @@ def main():
             SELECTING_TERMIN_TYPE: [CallbackQueryHandler(termin_type_handler, pass_user_data=True)],
             QUERING_TERMINS: [CallbackQueryHandler(quering_termins_handler, pass_user_data=True)],
             SCHEDULE_APPOINTMENT: [CallbackQueryHandler(interval_handler, pass_user_data=True)],
-            SELECT_DEADLINE: [MessageHandler(filters.TEXT, deadline_handler)],
-            SELECT_INTERVAL: [MessageHandler(filters.TEXT, interval_handler)],
+            SELECT_DEADLINE: [MessageHandler(filters.Filters.text, deadline_handler)],
+            SELECT_INTERVAL: [MessageHandler(filters.Filters.text, interval_handler)],
         },
 
         fallbacks=[CommandHandler('start', main_handler)],
